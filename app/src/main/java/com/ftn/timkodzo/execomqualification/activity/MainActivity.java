@@ -15,11 +15,11 @@ import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.ftn.timkodzo.execomqualification.DatabaseHelper;
 import com.ftn.timkodzo.execomqualification.R;
 import com.ftn.timkodzo.execomqualification.TaskModel;
-import com.ftn.timkodzo.execomqualification.activity.Main2Activity;
 import com.ftn.timkodzo.execomqualification.adapters.TaskAdapter;
 
 import java.util.ArrayList;
@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void addTask (View view) {
 
-        Intent intent = new Intent(this, Main2Activity.class);
+        Intent intent = new Intent(this, AddTaskActivity.class);
         startActivity(intent);
 
     }
@@ -55,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
             taskModel.setId(cursor.getInt(0));
             taskModel.setTaskName(cursor.getString(1));
             taskModel.setTaskContent(cursor.getString(2));
+            taskModel.setDone(cursor.getInt(3) == 1);
 
             list.add(taskModel);
 
@@ -84,14 +85,25 @@ public class MainActivity extends AppCompatActivity {
 
         activity = this;
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                Intent i = new Intent(activity, TaskDetailActivity.class);
+                i.putExtra("taskId", list.get(position).getId());
+                startActivity(i);
             }
         });
+
+
+    }
+
+    @Override
+    protected void onResume() {
+
+        allDataShow();
+        super.onResume();
+
     }
 
     @Override

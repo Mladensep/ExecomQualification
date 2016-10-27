@@ -1,7 +1,6 @@
 package com.ftn.timkodzo.execomqualification.activity;
 
 import android.content.Intent;
-import android.database.Cursor;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -11,9 +10,8 @@ import android.widget.Toast;
 
 import com.ftn.timkodzo.execomqualification.DatabaseHelper;
 import com.ftn.timkodzo.execomqualification.R;
-import com.ftn.timkodzo.execomqualification.TaskModel;
 
-public class Main2Activity extends AppCompatActivity {
+public class AddTaskActivity extends AppCompatActivity {
 
     DatabaseHelper myDb;
     EditText editTitle;
@@ -38,13 +36,13 @@ public class Main2Activity extends AppCompatActivity {
 
     public void save (View view) {
 
-        boolean isAdd = myDb.insertData(editTitle.getText().toString(), editTask.getText().toString());
+        boolean isAdd = myDb.insertData(editTitle.getText().toString(), editTask.getText().toString(),0);
 
         if (isAdd == true)
-            Toast.makeText(Main2Activity.this, "Data inserted!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(AddTaskActivity.this, "Data inserted!", Toast.LENGTH_SHORT).show();
 
         else
-            Toast.makeText(Main2Activity.this, "Error!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(AddTaskActivity.this, "Error!", Toast.LENGTH_SHORT).show();
 
         Intent i = new Intent(this, MainActivity.class);
         i.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

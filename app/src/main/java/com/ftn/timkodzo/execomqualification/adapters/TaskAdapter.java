@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.ftn.timkodzo.execomqualification.R;
@@ -54,6 +55,9 @@ public class TaskAdapter extends BaseAdapter {
 
         TextView name = (TextView)v.findViewById(R.id.nameTaskId);
         name.setText(taskModels.get(position).getTaskName());
+
+        CheckBox checkBox = (CheckBox) v.findViewById(R.id.checkBox);
+        checkBox.setChecked(taskModels.get(position).isDone());
 
         return v;
 

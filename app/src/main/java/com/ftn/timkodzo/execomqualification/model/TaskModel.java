@@ -1,4 +1,4 @@
-package com.ftn.timkodzo.execomqualification;
+package com.ftn.timkodzo.execomqualification.model;
 
 /**
  * Created by Mladen on 10/26/2016.
@@ -8,7 +8,16 @@ public class TaskModel {
     private int id;
     private String taskName;
     private String taskContent;
+    private boolean done;
 
+
+    public boolean isDone() {
+        return done;
+    }
+
+    public void setDone(boolean done) {
+        this.done = done;
+    }
 
     public int getId() {
         return id;

@@ -21,21 +21,13 @@
 
     <ListView
         android:id="@+id/listId"
+        android:paddingBottom="30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clickable="true"/>
 
     <Button
         android:id="@+id/buttonId"
-        android:onClick="addTask"
-        android:text="Add task"
-        android:background= "#e91e63"
-        android:textColor="#FFFF"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
-
-    <Button
-        android:id="@+id/butdastonId"
         android:onClick="addTask"
         android:text="Add task"
         android:background= "#e91e63"
