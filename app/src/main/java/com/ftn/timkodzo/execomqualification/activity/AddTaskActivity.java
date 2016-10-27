@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.ftn.timkodzo.execomqualification.DatabaseHelper;
+import com.ftn.timkodzo.execomqualification.dataBase.DatabaseHelper;
 import com.ftn.timkodzo.execomqualification.R;
 
 public class AddTaskActivity extends AppCompatActivity {

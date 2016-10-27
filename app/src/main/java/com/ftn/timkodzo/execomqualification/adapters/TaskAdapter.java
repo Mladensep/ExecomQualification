@@ -9,7 +9,7 @@ import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.ftn.timkodzo.execomqualification.R;
-import com.ftn.timkodzo.execomqualification.TaskModel;
+import com.ftn.timkodzo.execomqualification.model.TaskModel;
 
 import java.util.List;
 

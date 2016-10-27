@@ -10,9 +10,9 @@ import android.widget.CompoundButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.ftn.timkodzo.execomqualification.DatabaseHelper;
+import com.ftn.timkodzo.execomqualification.dataBase.DatabaseHelper;
 import com.ftn.timkodzo.execomqualification.R;
-import com.ftn.timkodzo.execomqualification.TaskModel;
+import com.ftn.timkodzo.execomqualification.model.TaskModel;
 
 public class TaskDetailActivity extends AppCompatActivity {
 
